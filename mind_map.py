@@ -43,7 +43,7 @@ app.layout = html.Div([
 ])
 Output('node-info', 'children'),
 Input('cytoscape', 'tapNodeData')
-)
+
 def display_node_info(node_data):
     if node_data:
         return f"Clicked Node: {node_data['label']}"
