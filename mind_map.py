@@ -60,15 +60,10 @@ def edit_node_label(n_clicks, node_data, new_label):
             if node["data"]["id"] == node_data["id"]:
                 node["data"]["label"] = new_label
                 break
-            return nodes + edges
-         return nodes + edges
+        return nodes + edges
+     return nodes + edges
 if __name__ == '__main__':
     app.run_server(debug=True)
-            
-
-        )
-    ])
-if __name__ == "__main__":
-    app.run_server(debug=True, port=8080)
+        
     
     
