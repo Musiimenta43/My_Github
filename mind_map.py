@@ -41,9 +41,10 @@ app.layout = html.Div([
     dcc.Input(id='node-edit', type='text', placeholder='Edit Node Label', debounce=True),
     html.Button("Update", id="update-button", n_clicks=0)
 ])
+@app.callback(
 Output('node-info', 'children'),
 Input('cytoscape', 'tapNodeData')
-
+)
 def display_node_info(node_data):
     if node_data:
         return f"Clicked Node: {node_data['label']}"
@@ -59,8 +60,8 @@ def edit_node_label(n_clicks, node_data, new_label):
             if node["data"]["id"] == node_data["id"]:
                 node["data"]["label"] = new_label
                 break
-                return nodes + edges
-                return nodes + edges
+            return nodes + edges
+         return nodes + edges
 if __name__ == '__main__':
     app.run_server(debug=True)
             
