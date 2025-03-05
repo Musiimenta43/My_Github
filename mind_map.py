@@ -55,7 +55,7 @@ def display_node_info(node_data):
             [Input('cytoscape', 'tapNodeData'), Input('node-edit', 'value')]
         )
 def edit_node_label(n_clicks, node_data, new_label, nodes, edges):
-    if n_clicks > 0 and node_data and new_label:
+    if n_clicks>0 and node_data and new_label:
         for node in nodes:
             if node["data"]["id"] == node_data["id"]:
                 node["data"]["label"] = new_label
