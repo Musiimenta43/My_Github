@@ -49,11 +49,11 @@ def display_node_info(node_data):
     if node_data:
         return f"Clicked Node: {node_data['label']}"
         return "Click a node to see deatils."
-        @app.callback(
+@app.callback(
             Output('cytoscape', 'elements'),
             [Input('update_button', 'n_clicks')],
             [Input('cytoscape', 'tapNodeData'), Input('node-edit', 'value')]
-        )
+)
 def edit_node_label(n_clicks, node_data, new_label, nodes, edges):
     if n_clicks>0 and node_data and new_label:
         for node in nodes:
